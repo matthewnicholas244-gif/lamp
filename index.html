@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#080b18">
+  <meta name="description" content="A responsive animated lamp login page.">
+  <title>Lamp Login Animation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+  <script src="./script.js" defer></script>
+</head>
+<body>
+  <main class="room" id="room">
+    <div class="room-light" id="roomLight" aria-hidden="true"></div>
+    <div class="stars" aria-hidden="true"></div>
+    <div class="fireflies" id="fireflies" aria-hidden="true"></div>
+
+    <header class="topbar">
+      <a class="brand" href="./" aria-label="Glow home"><span class="brand-mark">✦</span> glow<span class="brand-dot">.</span></a>
+      <button class="lamp-toggle" id="lampToggle" type="button" aria-pressed="false">
+        <span class="toggle-icon" aria-hidden="true">☼</span>
+        <span id="toggleLabel">Turn on the lamp</span>
+      </button>
+    </header>
+
+    <section class="scene" aria-label="Login">
+      <div class="lamp" aria-hidden="true">
+        <div class="lamp-glow"></div>
+        <div class="lamp-shade"><span></span></div>
+        <div class="lamp-neck"></div>
+        <div class="lamp-joint"></div>
+        <div class="lamp-arm"></div>
+        <div class="lamp-base"></div>
+      </div>
+
+      <div class="login-card">
+        <div class="eyebrow"><span class="eyebrow-line"></span> YOUR QUIET CORNER</div>
+        <h1>Welcome<br><span>back.</span></h1>
+        <p class="intro">A little light goes a long way. Sign in to continue.</p>
+
+        <form id="loginForm" novalidate>
+          <label for="email">Email address</label>
+          <div class="input-wrap">
+            <span class="field-icon" aria-hidden="true">✉</span>
+            <input id="email" name="email" type="email" placeholder="you@example.com" autocomplete="email" required>
+          </div>
+
+          <div class="password-heading">
+            <label for="password">Password</label>
+            <button class="text-button" type="button" id="forgotButton">Forgot password?</button>
+          </div>
+          <div class="input-wrap">
+            <span class="field-icon lock-icon" aria-hidden="true">⌑</span>
+            <input id="password" name="password" type="password" placeholder="Enter your password" autocomplete="current-password" minlength="6" required>
+            <button class="password-toggle" type="button" id="passwordToggle" aria-label="Show password" aria-pressed="false">Show</button>
+          </div>
+
+          <div class="form-options">
+            <label class="remember"><input type="checkbox" id="remember"> <span>Keep me signed in</span></label>
+          </div>
+          <button class="submit-button" type="submit">Sign in <span aria-hidden="true">↗</span></button>
+          <p class="form-message" id="formMessage" role="status" aria-live="polite"></p>
+        </form>
+
+        <div class="signup">New around here? <a href="#create-account" id="signupLink">Create an account</a></div>
+        <div class="card-footer"><span class="footer-sparkle">✦</span> Take a breath. You're right where you need to be.</div>
+      </div>
+    </section>
+
+    <footer class="page-footer">
+      <span>© <span id="year"></span> Glow Studio</span>
+      <span class="footer-status"><span class="status-dot"></span> A calmer place to begin</span>
+    </footer>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  </main>
+</body>
+</html>
